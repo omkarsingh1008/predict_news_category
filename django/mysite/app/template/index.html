@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block main %}
+{% if error %}
+<h1>{{error}}</h1>
+{% endif %}
+<div id=form>
+	<form method="POST" action='predict/'>
+		{% csrf_token %}
+    
+    <p>
+	<label>Enquiry 
+	<textarea name="comments" maxlength="1000"></textarea>
+	</label>
+	</p>
+    <button type="submit" class="btn btn-primary">predict</button>
+    </form>
+</div>    	
+{% endblock %}
